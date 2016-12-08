@@ -12,6 +12,7 @@ fi
 # Change ssh port
 SSH_PORT=2200
 sed -i 's/Port 22/Port $SSH_PORT/' /etc/ssh/sshd_config
+service ssh restart
 
 # Configure Uncomplecate Firewall(UFW)
 ufw default deny incoming
