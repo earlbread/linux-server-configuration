@@ -1,5 +1,8 @@
 #/bin/bash
 
+set -euo pipefail
+IFS=$'\n\t'
+
 # Check root permission
 if [[ $EUID -ne 0 ]]; then
     echo "This script must be run as root permission"
