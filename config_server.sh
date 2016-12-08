@@ -32,7 +32,7 @@ dpkg-reconfigure --frontend noninteractive tzdata
 
 # Create user
 USER_NAME="grader"
-USER_HOME="/home/$USERNAME"
+USER_HOME="/home/$USER_NAME"
 
 # Set LC_ALL
 echo 'LC_ALL="en_US.UTF-8"' >> /etc/environment
