@@ -15,7 +15,7 @@ apt -qy upgrade
 
 # Change ssh port
 SSH_PORT=2200
-sed -i 's/Port 22/Port $SSH_PORT' /etc/ssh/sshd_config
+sed -i 's/Port 22/Port $SSH_PORT/' /etc/ssh/sshd_config
 
 # Configure Uncomplecate Firewall(UFW)
 ufw default deny incoming
