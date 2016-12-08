@@ -25,7 +25,7 @@ ufw allow $SSH_PORT/tcp
 ufw allow www
 ufw allow ntp
 
-ufw enable
+yes | ufw enable
 
 # Configure the local timezone to UTF
 echo "Etc/UTC" | tee /etc/timezone
