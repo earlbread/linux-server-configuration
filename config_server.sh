@@ -25,8 +25,6 @@ ufw allow $SSH_PORT/tcp
 ufw allow www
 ufw allow ntp
 
-yes | ufw enable
-
 # Configure the local timezone to UTF
 echo "Etc/UTC" | tee /etc/timezone
 dpkg-reconfigure --frontend noninteractive tzdata
@@ -57,3 +55,6 @@ chown grader:grader -R $USER_HOME/.ssh
 
 # Disable root login
 rm -r /root/.ssh
+
+# Enable firewall
+yes | ufw enable
