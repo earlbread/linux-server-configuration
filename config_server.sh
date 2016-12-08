@@ -9,10 +9,6 @@ if [[ $EUID -ne 0 ]]; then
     exit 1
 fi
 
-# Update all currently installed packages
-apt -qy update
-apt -qy upgrade
-
 # Change ssh port
 SSH_PORT=2200
 sed -i 's/Port 22/Port $SSH_PORT/' /etc/ssh/sshd_config
@@ -28,7 +24,6 @@ ufw allow ntp
 # Configure the local timezone to UTF
 echo "Etc/UTC" | tee /etc/timezone
 dpkg-reconfigure --frontend noninteractive tzdata
-
 
 # Create user
 USER_NAME="grader"
