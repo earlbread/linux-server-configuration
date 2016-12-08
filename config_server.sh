@@ -35,6 +35,7 @@ echo "127.0.0.1 $(cat /etc/hostname)" >> /etc/hosts
 
 # Create User without password
 adduser --disabled-password --gecos "" $USER_NAME
+passwd -d $USER_NAME
 
 # Give sudo permission to user
 echo "$USER_NAME ALL=(ALL) PASSWD:ALL"
