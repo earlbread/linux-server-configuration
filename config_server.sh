@@ -38,7 +38,7 @@ adduser --disabled-password --gecos "" $USER_NAME
 passwd -d $USER_NAME
 
 # Give sudo permission to user
-echo "$USER_NAME ALL=(ALL) PASSWD:ALL"
+echo "$USER_NAME ALL=(ALL) PASSWD:ALL" > /etc/sudoers.d/$USER_NAME
 
 # Copy key
 cp -r /root/.ssh $USER_HOME/
