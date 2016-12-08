@@ -36,7 +36,7 @@ USER_HOME="/home/$USER_NAME"
 
 # Set LC_ALL
 echo 'LC_ALL="en_US.UTF-8"' >> /etc/environment
-source /etc/environment
+export LC_ALL="en_US.UTF-8"
 
 # Add hostname to hosts
 echo "127.0.0.1 $(cat /etc/hostname)" >> /etc/hosts
