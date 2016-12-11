@@ -12,7 +12,6 @@ fi
 # Change ssh port
 SSH_PORT=2200
 sed -i "s/Port 22/Port $SSH_PORT/" /etc/ssh/sshd_config
-service ssh restart
 
 # Configure Uncomplecate Firewall(UFW)
 ufw default deny incoming
@@ -47,6 +46,9 @@ chmod 644 $USER_HOME/.ssh/authorized_keys
 chown grader:grader -R $USER_HOME/.ssh
 
 # Disable root login
+sed -i "s/PermitRootLogin without-password/PermitRootLogin no/" /etc/ssh/sshd_config
+echo "AllowUsers grader" >> /etc/ssh/sshd_config
+service ssh restart
 rm -r /root/.ssh
 
 # Enable firewall
